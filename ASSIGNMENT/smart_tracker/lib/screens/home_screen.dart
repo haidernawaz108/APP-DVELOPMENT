@@ -16,8 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF1A1A1A), // dark background
-
-      // 🔹 TOP APP BAR
       appBar: AppBar(
         backgroundColor: mainColor,
         centerTitle: true,
@@ -30,14 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-
-      // 🔹 BODY
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(height: 30),
-
-          // ⭐ NEW WELCOME TEXT
           Text(
             "WELCOME TO OUR SMART TRACKER APP",
             textAlign: TextAlign.center,
@@ -50,12 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           SizedBox(height: 40),
-
-          // ⭐ Buttons section
           Center(
             child: Column(
               children: [
-                // ADD ACTIVITY BUTTON
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: mainColor,
@@ -82,8 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
                 SizedBox(height: 20),
-
-                // VIEW HISTORY BUTTON
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: mainColor,
@@ -113,8 +102,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-
-      // 🔹 BOTTOM NAVIGATION BAR
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: mainColor,
         selectedItemColor: Colors.white,

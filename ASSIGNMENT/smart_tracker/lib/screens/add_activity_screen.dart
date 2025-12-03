@@ -20,11 +20,8 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
 
   bool loading = false;
 
-  final Color mainColor = Color(0xFF5A4FCF); // Theme purple-blue
+  final Color mainColor = Color(0xFF5A4FCF); 
 
-  // ---------------------------
-  // GET LOCATION + ADDRESS
-  // ---------------------------
   getLocation() async {
     var pos = await LocationService().getLocation();
 
@@ -45,10 +42,6 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
       );
     }
   }
-
-  // ---------------------------
-  // TAKE PHOTO
-  // ---------------------------
   takePicture() async {
     var filePath = await ImageService().pickFromCamera();
     if (filePath != null) {
@@ -57,15 +50,11 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
       });
     }
   }
-
-  // ---------------------------
-  // SAVE ACTIVITY → API
-  // ---------------------------
   saveActivity() async {
     if (lat == null || lng == null || imagePath == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Please get location and take photo first"),
+          content: Text("PLEASE GET LOCATION AND IMAGE FIRST!!!"),
         ),
       );
       return;
@@ -120,9 +109,6 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
 
       body: Column(
         children: [
-          // ---------------------------
-          // 🔹 TOP HALF — LOCATION SECTION
-          // ---------------------------
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -189,10 +175,6 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
               ),
             ),
           ),
-
-          // ---------------------------
-          // 🔹 BOTTOM HALF — PHOTO SECTION
-          // ---------------------------
           Expanded(
             child: Container(
               width: double.infinity,
@@ -243,10 +225,6 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
               ),
             ),
           ),
-
-          // ---------------------------
-          // 🔹 SAVE BUTTON
-          // ---------------------------
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: loading

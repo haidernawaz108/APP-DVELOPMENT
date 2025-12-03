@@ -2,8 +2,6 @@ import 'package:image_picker/image_picker.dart';
 
 class ImageService {
   final ImagePicker _picker = ImagePicker();
-
-  // Take picture using camera
   Future<String?> pickFromCamera() async {
     try {
       final XFile? file = await _picker.pickImage(
@@ -12,12 +10,12 @@ class ImageService {
       );
 
       if (file != null) {
-        return file.path; // return local file path
+        return file.path; 
       } else {
-        return null; // user cancelled
+        return null; 
       }
     } catch (e) {
-      return null; // any error
+      return null; 
     }
   }
 }
